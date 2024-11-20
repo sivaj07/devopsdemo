@@ -1,0 +1,197 @@
+Jenkin installation steps on WSL-Ubuntu 
+
+
+
+Get:28 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 c-n-f Metadata [540 B] Fetched 19.0 MB in 20s (947 kB/s) Reading package lists... Done Building dependency tree Reading state information... Done 157 packages can be upgraded. Run 'apt list --upgradable' to see them. --2024-11-19 08:48:39-- https://packages.adoptium.net/artifactory/api/gpg/key/public Resolving packages.adoptium.net (packages.adoptium.net)... 2606:4700:83b2:c6ae:523b:30:b43a:4f7c, 104.18.21.66, 104.18.20.66 Connecting to packages.adoptium.net (packages.adoptium.net)|2606:4700:83b2:c6ae:523b:30:b43a:4f7c|:443... connected. HTTP request sent, awaiting response... 200 OK Length: 1793 (1.8K) [text/plain] Saving to: ‘STDOUT’ - 0%[ ] 0 --.-KB/s -----BEGIN PGP PUBLIC KEY BLOCK----- mQENBGGTvTQBCAC6ey144n7CG8foafF6mwgIBN1fIm1ILZDuGS4tMr0/XI8pgJnT QvsPxZWEvtSm7bEMObzEoZJcXwjBcJl1B0ui8k5kHMTI75gCmZPsoKLFWIEpuRBQ PBocusw80apDmLnNDQLVQvDFtEua5gaNa/fRw9YsmBoXBqvgrjFUIdGyWoQvH5+a 9OYlWD9n5VV0gnVMb+aclwVzB/zJw3kHGSgzuMtlAHeQiah7Y8yomQn/UIX8yqDf +11sP3+c87YcjkRqImRTtmKEDcEtGPAIXC6SYA+uEEkbYE0Fy0chkvtnVWJ59 Get:2 https://packages.adoptium.net/artifactory/deb focal/main amd64 adoptium-ca-certificates all 1.0.3-1 [2340 B] Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 p11-kit amd64 0.23.20-1ubuntu0.1 [93.8 kB] Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 fonts-dejavu-extra all 2.37-1 [1953 kB] Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 java-common all 0.72 [6816 B] Get:6 https://packages.adoptium.net/artifactory/deb focal/main amd64 temurin-17-jdk amd64 17.0.13.0.0+11 [165 MB] Fetched 168 MB in 1min 45s (1592 kB/s) Selecting previously unselected package p11-kit-modules:amd64. (Reading database ... 33045 files and directories currently installed.) Preparing to unpack .../0-p11-kit-modules_0.23.20-1ubuntu0.1_amd64.deb ... Unpacking p11-kit-modules:amd64 (0.23.20-1ubuntu0.1) ... Selecting previously unselected package p11-kit. Preparing to unpack .../1-p11-kit_0.23.20-1ubuntu0.1_amd64.deb ... Unpacking p11-kit (0.23.20-1ubuntu0.1) ... Selecting previously unselected package adoptium-ca-certificates. Preparing to unpack .../2-adoptium-ca-certificates_1.0.3-1_all.deb ... Unpacking adoptium-ca-certificates (1.0.3-1) ... Selecting previously unselected package fonts-dejavu-extra. Preparing to unpack .../3-fonts-dejavu-extra_2.37-1_all.deb ... Unpacking fonts-dejavu-extra (2.37-1) ... Selecting previously unselected package java-common. Preparing to unpack .../4-java-common_0.72_all.deb ... Unpacking java-common (0.72) ... Selecting previously unselected package temurin-17-jdk. Preparing to unpack .../5-temurin-17-jdk_17.0.13.0.0+11_amd64.deb ... Unpacking temurin-17-jdk (17.0.13.0.0+11) ... Setting up java-common (0.72) ... Setting up p11-kit-modules:amd64 (0.23.20-1ubuntu0.1) ... Setting up fonts-dejavu-extra (2.37-1) ... Setting up p11-kit (0.23.20-1ubuntu0.1) ... Setting up adoptium-ca-certificates (1.0.3-1) ... /etc/ssl/certs/adoptium/cacerts successfully populated. Setting up temurin-17-jdk (17.0.13.0.0+11) ... update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jar to provide /usr/bin/jar (jar) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jarsigner to provide /usr/bin/jarsigner (jarsigner) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/java to provide /usr/bin/java (java) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/javac to provide /usr/bin/javac (javac) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/javadoc to provide /usr/bin/javadoc (javadoc) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/javap to provide /usr/bin/javap (javap) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jcmd to provide /usr/bin/jcmd (jcmd) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jconsole to provide /usr/bin/jconsole (jconsole) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jdb to provide /usr/bin/jdb (jdb) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jdeprscan to provide /usr/bin/jdeprscan (jdeprscan) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jdeps to provide /usr/bin/jdeps (jdeps) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jfr to provide /usr/bin/jfr (jfr) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jhsdb to provide /usr/bin/jhsdb (jhsdb) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jimage to provide /usr/bin/jimage (jimage) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jinfo to provide /usr/bin/jinfo (jinfo) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jlink to provide /usr/bin/jlink (jlink) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jmap to provide /usr/bin/jmap (jmap) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jmod to provide /usr/bin/jmod (jmod) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jpackage to provide /usr/bin/jpackage (jpackage) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jps to provide /usr/bin/jps (jps) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jrunscript to provide /usr/bin/jrunscript (jrunscript) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jshell to provide /usr/bin/jshell (jshell) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jstack to provide /usr/bin/jstack (jstack) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jstat to provide /usr/bin/jstat (jstat) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/jstatd to provide /usr/bin/jstatd (jstatd) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/bin/serialver to provide /usr/bin/serialver (serialver) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode update-alternatives: using /usr/lib/jvm/temurin-17-jdk-amd64/lib/jspawnhelper to provide /usr/bin/jspawnhelper (jspawnhelper) in auto mode Processing triggers for man-db (2.9.1-1) ... openjdk 17.0.13 2024-10-15 OpenJDK Runtime Environment Temurin-17.0.13+11 (build 17.0.13+11) OpenJDK 64-Bit Server VM Temurin-17.0.13+11 (build 17.0.13+11, mixed mode, sharing) Hit:1 https://download.docker.com/linux/ubuntu focal InRelease Ign:2 https://pkg.jenkins.io/debian-stable binary/ InRelease Hit:3 http://archive.ubuntu.com/ubuntu focal InRelease Get:4 https://pkg.jenkins.io/debian-stable binary/ Release [2044 B] Get:5 https://packages.adoptium.net/artifactory/deb focal InRelease [7511 B] Hit:6 http://archive.ubuntu.com/ubuntu focal-updates InRelease Get:7 https://pkg.jenkins.io/debian-stable binary/ Release.gpg [833 B] Hit:8 http://security.ubuntu.com/ubuntu focal-security InRelease Hit:9 http://archive.ubuntu.com/ubuntu focal-backports InRelease Get:10 https://pkg.jenkins.io/debian-stable binary/ Packages [28.0 kB] Fetched 38.4 kB in 8s (4913 B/s) Reading package lists... Done Reading package lists... Done Building dependency tree Reading state information... Done The following NEW packages will be installed: jenkins 0 upgraded, 1 newly installed, 0 to remove and 157 not upgraded. Need to get 94.1 MB of archives. After this operation, 96.1 MB of additional disk space will be used. Get:1 https://pkg.jenkins.io/debian-stable binary/ jenkins 2.479.1 [94.1 MB] Fetched 94.1 MB in 1min 14s (1269 kB/s) Selecting previously unselected package jenkins. (Reading database ... 33643 files and directories currently installed.) Preparing to unpack .../jenkins_2.479.1_all.deb ... Unpacking jenkins (2.479.1) ... Setting up jenkins (2.479.1) ... invoke-rc.d: could not determine current runlevel Created symlink /etc/systemd/system/multi-user.target.wants/jenkins.service → /lib/systemd/system/jenkins.service. Processing triggers for systemd (245.4-4ubuntu3.21) ... System has not been booted with systemd as init system (PID 1). Can't operate. Failed to connect to bus: Host is down System has not been booted with systemd as init system (PID 1). Can't operate. Failed to connect to bus: Host is down
+It looks like you're in the middle of a complex installation or update process for your system. Here's a quick rundown of what's happening based on your logs:
+
+Package Updates: Your system fetched and installed updates for several packages, such as p11-kit and java-common, and new packages like temurin-17-jdk.
+
+Key and Certificate Setup: You successfully fetched and set up public keys and CA certificates, which are important for secure communications.
+
+Jenkins Installation: You installed Jenkins, a popular automation server.
+
+The final messages indicate issues related to systemd not being the init system:
+
+System Has Not Been Booted with systemd: This means that your system is not using systemd for initialization, which is common in WSL (Windows Subsystem for Linux) environments.
+
+If you're working in WSL and need Jenkins to run, you might need to use an alternative method to start services, like manually starting Jenkins using java -jar command or exploring alternative init systems like sysvinit.
+
+Let me know if you need more detailed guidance on any of these steps or if there's something specific you'd like to address!
+
+root@LAPTOP-CLJ0MBCP:/home/siva# sysvinit sysvinit: command not found
+It seems like your system doesn't have sysvinit installed, which is why you're seeing the "command not found" error. To manage services using SysVinit, you can install the necessary package for your distribution.
+
+Here's how you can install sysvinit-utils on different Linux distributions:
+
+Debian/Ubuntu: sudo apt-get install sysvinit-utils
+
+CentOS: sudo yum install initscripts
+
+Fedora: sudo dnf install initscripts
+
+Kali Linux: sudo apt-get install init-system-helpers
+
+Once installed, you should be able to use commands like service to manage your services.
+
+Would you like more detailed instructions on how to use these commands?
+
+
+
+
+root@LAPTOP-CLJ0MBCP:/home/siva# sysvinit sysvinit: command not found root@LAPTOP-CLJ0MBCP:/home/siva# sysvinit-utils sysvinit-utils: command not found root@LAPTOP-CLJ0MBCP:/home/siva# sudo apt-get install sysvinit-utils Reading package lists... Done Building dependency tree Reading state information... Done sysvinit-utils is already the newest version (2.96-2.1ubuntu1). 0 upgraded, 0 newly installed, 0 to remove and 157 not upgraded. root@LAPTOP-CLJ0MBCP:/home/siva# sysvinit sysvinit: command not found root@LAPTOP-CLJ0MBCP:/home/siva# sysvinit-utils sysvinit-utils: command not found root@LAPTOP-CLJ0MBCP:/home/siva#
+It seems like the commands you're trying to use are not available, even though sysvinit-utils is already installed. This might be due to the way services are managed in WSL (Windows Subsystem for Linux), which doesn't use the traditional init systems like systemd or sysvinit by default.
+
+Starting Jenkins in WSL without systemd
+To run Jenkins in a WSL environment, you can use a direct approach to start Jenkins using its Java command. Here’s how you can do it:
+
+Navigate to the Jenkins Directory: If Jenkins is installed in a specific directory, navigate there.
+
+sh
+cd /usr/share/jenkins
+Start Jenkins Manually: Use the Java command to start Jenkins.
+
+sh
+java -jar jenkins.war
+Access Jenkins: Once Jenkins is started, you can access it via http://localhost:8080 on your browser.
+
+Automating Jenkins Start on WSL
+You can create a simple script to start Jenkins and place it in your startup tasks:
+
+Create a Start Script: Create a script called start_jenkins.sh in your home directory.
+
+sh
+nano ~/start_jenkins.sh
+Add the following content:
+
+sh
+#!/bin/bash
+cd /usr/share/jenkins
+java -jar jenkins.war
+Make the Script Executable:
+
+sh
+chmod +x ~/start_jenkins.sh
+Add to .bashrc or .profile: Add the script to your .bashrc or .profile to run on startup.
+
+sh
+echo "~/start_jenkins.sh &" >> ~/.bashrc
+This way, Jenkins will start automatically whenever you open a new terminal session in WSL.
+
+If you encounter any issues or need further assistance, feel free to ask!
+
+root@LAPTOP-CLJ0MBCP:/usr/share/jenkins# java -jar jenkins.war Error: Unable to access jarfile jenkins.war
+It looks like the jenkins.war file is either not in the /usr/share/jenkins directory or there might be a path issue. Here are some steps to help you troubleshoot and resolve this:
+
+Steps to Resolve
+Check if jenkins.war Exists:
+
+Verify that the jenkins.war file is in the /usr/share/jenkins directory.
+
+sh
+ls /usr/share/jenkins
+Download the jenkins.war File:
+
+If the file is not present, you can download it directly from the Jenkins website.
+
+sh
+wget https://get.jenkins.io/war-stable/latest/jenkins.war -P /usr/share/jenkins/
+Verify File Permissions:
+
+Ensure that the jenkins.war file has the correct permissions.
+
+sh
+chmod +x /usr/share/jenkins/jenkins.war
+Run Jenkins:
+
+After verifying the file exists and permissions are correct, run the command again.
+
+sh
+java -jar /usr/share/jenkins/jenkins.war
+Example Commands
+Here’s a complete example if you need to download the jenkins.war file:
+
+sh
+cd /usr/share/jenkins
+wget https://get.jenkins.io/war-stable/latest/jenkins.war
+chmod +x jenkins.war
+java -jar jenkins.war
+By following these steps, you should be able to get Jenkins up and running. Let me know if you encounter any issues or need further assistance!
+
+root@LAPTOP-CLJ0MBCP:/usr/share/jenkins# ls /usr/share/jenkins migrate
+It looks like the jenkins.war file isn't in the /usr/share/jenkins directory. This is why the command can't find the file to start Jenkins.
+
+You can download the jenkins.war file directly into this directory. Here’s how you can do it:
+
+Navigate to the Jenkins Directory:
+
+sh
+cd /usr/share/jenkins
+Download the jenkins.war File:
+
+sh
+wget https://get.jenkins.io/war-stable/latest/jenkins.war
+Verify the Download:
+
+sh
+ls /usr/share/jenkins
+You should now see the jenkins.war file in the directory.
+
+Run Jenkins:
+
+sh
+java -jar jenkins.war
+By following these steps, you should be able to download the necessary Jenkins file and start it successfully. If you encounter any issues or need further guidance, let me know!
+
+2024-11-19 03:43:23.647+0000 [id=35] INFO jenkins.InitReactorRunner$1#onAttained: Completed initialization 2024-11-19 03:43:23.858+0000 [id=24] INFO hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running 2024-11-19 03:43:32.504+0000 [id=51] INFO h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller 2024-11-19 03:43:32.508+0000 [id=51] INFO hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+Great! It looks like Jenkins is fully up and running on your system. You've successfully completed the setup, and the logs indicate that everything is initialized properly.
+
+Here are a few things you might want to do next:
+
+Access Jenkins Dashboard: Open your web browser and go to http://localhost:8080 to access the Jenkins dashboard.
+
+Unlock Jenkins: If this is your first time setting up Jenkins, you might need to unlock it using the initial admin password found in /var/lib/jenkins/secrets/initialAdminPassword.
+
+Install Suggested Plugins: Follow the on-screen instructions to install the recommended plugins.
+
+Create Admin User: Set up your admin user for Jenkins to manage your builds and configurations.
+
+If you run into any issues or need help with further configurations, feel free to ask. Enjoy your new Jenkins setup!
+
+Operating system end of life monitor You are running Jenkins on Ubuntu 20.04.6 LTS. Jenkins will no longer support Ubuntu 20.04.6 LTS after 2025-04-02. Please plan your upgrade to a supported operating system before 2025-04-02. Refer to the documentation for details.
+It looks like you’ve received a notification about the upcoming end-of-life for Ubuntu 20.04.6 LTS support by Jenkins. Here’s what you can do to ensure you stay supported:
+
+Steps to Upgrade Your Operating System
+Choose a New Version: Decide which supported Ubuntu version you want to upgrade to. Ubuntu 22.04 LTS (Jammy Jellyfish) is a good option as it is the next LTS version with extended support.
+
+Backup Your Data: Before performing any upgrades, make sure to back up your data to prevent any loss.
+
+Update Your Current System:
+
+Make sure all current packages are up to date.
+
+sh
+sudo apt-get update
+sudo apt-get upgrade
+Upgrade to the New Version:
+
+Use the do-release-upgrade command to upgrade to the new version. This command will handle the upgrade process.
+
+sh
+sudo do-release-upgrade
+Verify the Upgrade:
+
+After the upgrade, check your new Ubuntu version to ensure the upgrade was successful.
+
+sh
+lsb_release -a
+Reinstall and Reconfigure Jenkins:
+
+After upgrading your OS, you may need to reinstall and reconfigure Jenkins to ensure it’s working correctly with the new system.
+
+Resources and Documentation
+Refer to the following links for detailed upgrade instructions:
+
+Ubuntu Release Upgrades
+
+Jenkins Installation Guide
