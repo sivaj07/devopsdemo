@@ -189,9 +189,16 @@ Reinstall and Reconfigure Jenkins:
 
 After upgrading your OS, you may need to reinstall and reconfigure Jenkins to ensure it’s working correctly with the new system.
 
-Resources and Documentation
-Refer to the following links for detailed upgrade instructions:
+After installation To start Jenkins in WSL machine manually
+===========================================================
 
-Ubuntu Release Upgrades
 
-Jenkins Installation Guide
+#!/bin/bash
+# Script to start Jenkins
+
+# Navigate to the Jenkins directory
+cd /usr/share/jenkins
+
+# Start Jenkins
+java -jar jenkins.war
+
